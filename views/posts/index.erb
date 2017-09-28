@@ -1,16 +1,27 @@
 
-<h1><%= @page_header %></h1>
+<% @details.each_with_index do |detail, index| %>
+
+	<h3><%= detail[:name] %></h3>
+	<h4><%= detail[:birthday] %></h4>
+	<p><%= detail[:profile] %></p>
+
+	<a href="posts/<%= index %>/edit">Edit</a>
+
+<% end %>
+
+<h2><%= @work_header %></h2>
 
 <% @posts.each_with_index do |post, index| %>
 
-	<h2><%= post[:title] %></h2>
-	<h3><%= post[:year] %></h3>
+	<h3><%= post[:title] %></h3>
+	<h3><%= post[:pow] %></h3>
+	<h3><%= post[:date] %></h3>
 	<p><%= post[:body] %></p>
 
 	<a href="posts/<%= index %>/edit">Edit</a>
 
 	<form action="/posts/<%= index %>" method="POST">
 		<input type="hidden" name="_method" value="DELETE">
-		<input type="submit" name="Delete">
+		<input type="submit" value="Delete">
 	</form>
 <% end %>

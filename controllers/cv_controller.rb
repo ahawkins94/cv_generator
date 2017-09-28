@@ -8,25 +8,36 @@ class CvController < Sinatra::Base
 
 	set :views, Proc.new { File.join(root, 'views') }
 
-  $posts = [{
-      title: "Example job",
-      year: "January 2015 - January 2016",
-      body: "Example job description"
+	$posts = [{
+		title: "Example job",
+		pow: "Example Workplace",
+		date: "January 2015 - January 2016",
+		body: "Example job description"
   },
   {
-      title: "Example job",
-      year: "January 2014 - January 2015",
-      body: "Example job description"
+    	title: "Example Job Jitle",
+    	pow: "Example Workplace",
+    	date: "January 2014 - January 2015",
+   		body: "Example job description"
   },
   {
-      title: "Example job",
-      year: "January 2014 - January 2015",
-      body: "Example job description"
+    	title: "Example job",
+    	pow: "Example Workplace",
+    	date: "January 2014 - January 2015",
+    	body: "Example job description"
+  }]
+
+	$details = [{
+  		name: "Joe Blogs",
+  		birthday: "dd/mm/yy",
+  		profile: "Include about 100 words about yourself here"
+
   }]
 
 	get '/posts' do
-		@page_header = "All the posts"
+		@work_header = "Work History"
 		@posts = $posts
+		@details = $details
 		erb :"posts/index"
 	end
 
@@ -53,6 +64,7 @@ class CvController < Sinatra::Base
 	get "/posts/:id/edit" do
 		@id = params[:id].to_i
 		@post = $posts[@id]
+		@details = $details[@id]
 
 		erb :"posts/edit"
 	end
