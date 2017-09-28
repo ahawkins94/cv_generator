@@ -55,6 +55,8 @@ class CvController < Sinatra::Base
 	post "/posts" do
 		new_post = {
 			title: params[:title],
+			pow: params[:pow],
+			date: params[:date],
 			body: params[:body]
 		}
 		$posts << new_post
@@ -72,6 +74,8 @@ class CvController < Sinatra::Base
 	put "/posts/:id" do
 		id = params[:id].to_i
 		$posts[id][:title] = params[:title]
+		$posts[id][:pow] = params[:pow]
+		$posts[id][:date] = params[:date]
 		$posts[id][:body] = params[:body]
 
 		redirect "/posts/#{id}"
