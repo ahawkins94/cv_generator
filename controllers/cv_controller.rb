@@ -9,16 +9,19 @@ class CvController < Sinatra::Base
 	set :views, Proc.new { File.join(root, 'views') }
 
   $posts = [{
-      title: "Post 1",
-      body: "This is the first post"
+      title: "Example job",
+      year: "January 2015 - January 2016",
+      body: "Example job description"
   },
   {
-      title: "Post 2",
-      body: "This is the second post"
+      title: "Example job",
+      year: "January 2014 - January 2015",
+      body: "Example job description"
   },
   {
       title: "Post 3",
-      body: "This is the third post"
+      year: "January 2014 - January 2015",
+      body: "Example job description"
   }]
 
 	get '/posts' do
