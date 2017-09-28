@@ -1,7 +1,7 @@
 <h1>Edit Entry</h1>
 
 <form action="/posts/<%= @id %>" method="POST">
-	
+<!-- 	
 	<label for="name">Edit Name: </label>
 	<input type="text" name="name" value="<%= @details[:name] %>">
 
@@ -9,16 +9,16 @@
 	<input type="text" name="birthday" value="<%= @details[:birthday] %>">
 
 	<label for="profile"><br><br>Edit Profile: </label>
-	<textarea name="profile" placeholder="Write roughly 100 words about yourself"><%= @details[:profile] %>"></textarea>
+	<textarea name="profile" placeholder="Write roughly 100 words about yourself"><%= @details[:profile] %>"></textarea> -->
 
 	<label for="title"><br><br><br><br>Edit Job Title: </label>
 	<input type="text" name="title" value="<%= @post[:title] %>">
 
 	<label for="pow"><br><br>Edit Place of Work: </label>
-	<input type="text" name="pow" value="<%= @post[:pow] %>">
+	<input type="text" name="title" value="<%= @post[:pow] %>">
 
 	<label for="date"><br><br> Edit Date: </label>
-	<textarea name="date" placeholder="E.g. January 2012 - February 2013"><%= @post[:date] %></textarea>
+	<input type="text" name="title" value="<%= @post[:date] %>">
 
 	<label for="body"><br><br> Edit Description: </label>
 	<textarea name="body" placeholder="Post body"><%= @post[:body] %></textarea>
