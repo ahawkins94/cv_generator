@@ -19,7 +19,7 @@ class CvController < Sinatra::Base
       body: "Example job description"
   },
   {
-      title: "Post 3",
+      title: "Example job",
       year: "January 2014 - January 2015",
       body: "Example job description"
   }]
