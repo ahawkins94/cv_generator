@@ -1,4 +1,4 @@
-<h1>Edit Form</h1>
+<h1>Edit Entry</h1>
 
 <form action="/posts/<%= @id %>" method="POST">
 	
@@ -6,7 +6,7 @@
 	<input type="text" name="title" value="<%= @post[:title] %>">
 
 	<label for="year"> <br><br> Edit Year: </label>
-	<textarea name="body" placeholder="Post body"><%= @post[:year] %></textarea>
+	<textarea name="year" placeholder="Post year"><%= @post[:year] %></textarea>
 
 	<label for="body"> <br><br> Edit Description: </label>
 	<textarea name="body" placeholder="Post body"><%= @post[:body] %></textarea>
