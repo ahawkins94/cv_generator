@@ -1,0 +1,15 @@
+
+<h1><%= @page_header %></h1>
+
+<% @posts.each_with_index do |post, index| %>
+
+	<h2>Post Tile: <%= post[:title] %></h2>
+	<p><%= post[:body] %></p>
+	<a href="posts/<%= index %>">View</a>
+	<a href="posts/<%= index %>/edit">Edit</a>
+
+	<form action="/posts/<%= index %>" method="POST">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" name="Delete">
+	</form>
+<% end %>
